@@ -52,3 +52,8 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+function focusRed() {
+    document.getElementById('chat-box').style.zIndex = 1;
+    document.getElementById('chat-box').style.opacity = 1;
+  }

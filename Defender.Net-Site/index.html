@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Grayscale - Start Bootstrap Theme</title>
+        <title>Defender.NET</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
@@ -15,19 +15,32 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <style>
-            .chat-box {
+            #chat-box {
                 white-space: pre;
                 position: fixed;
-                z-index: 100; 
                 bottom: 2%;
                 right: 2%;
-                height: 50%;
-                width: 15%;
+                height: 60%;
+                width: 25%;
+                z-index: -1;
+                opacity: 0;
+            }
+            @media screen and (max-device-width: 480px) {
+                #chat-box {
+                white-space: pre;
+                position: fixed;
+                bottom: 2%;
+                right: 2%;
+                height: 65%;
+                width: 90%;
+                z-index: -1;
+                opacity: 0;
+            }
             }
             </style> 
     </head>
     <body id="page-top">
-        <div class="chat-box"><iframe src="chatbot/chatBot.html" height="100%" width="100%" scrolling="no"></iframe></div>
+        <div id="chat-box"><iframe src="chatbot/chatBot.html" height="100%" width="100%" scrolling="no"></iframe></div>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container px-4 px-lg-5">
@@ -39,9 +52,9 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#about">Про нас</a></li>
-                        <li class="nav-item"><a class="nav-link" href="D:\Teamwork\startbootstrap-grayscale-gh-pages\2.html">Послуги</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#signup">Поради</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">Контакти</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Послуги</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#advice">Поради</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#social">Контакти</a></li>
                     </ul>
                 </div>
             </div>
@@ -58,8 +71,8 @@
             <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
                 <div class="d-flex justify-content-center">
                     <div class="text-center">
-                        <h2 class="text-white-50 mx-auto mt-2 mb-5">Щось коротке про функції і послуги</h2>
-                        <a class="btn btn-primary" href="#about">Про нас</a>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">Маєш проблеми з ПК? Наш розумний чат-бот тобі допоможе. Просто опиши йому проблему</h2>
+                        <a class="btn btn-primary" onclick="focusRed()">Вікдрити чат-бота</a>
                     </div>
                 </div>
             </div>
@@ -69,11 +82,11 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8">
-                        <h2 class="text-white mb-4">Професіонали і бла бла</h2>
+                        <h2 class="text-white mb-4">Сервіс, що надає послуги для забезпечення комп'ютерної безпеки. </h2>
                         <p class="text-white-50">
-                            Для контакту з нами ми використуємо ...
-                            <a href="https://startbootstrap.com/theme/grayscale/">the preview page.</a>
-                            Текст текст
+                            Ви можете сконтактуватись з нами напряму та обговорити вашу проблему. Наші контакти ви можете знайти 
+                            <a href="https://startbootstrap.com/theme/grayscale/">тут.</a> 
+                            Ми раді кожному клієнту!
                         </p>
                     </div>
                 </div>
@@ -81,27 +94,34 @@
             </div>
         </section>
         <!-- Projects-->
-        <section class="projects-section bg-light" id="projects">
+        <section class="projects-section bg-light" >
             <div class="container px-4 px-lg-5">
                 <!-- Featured Project Row-->
                 <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
                     <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="..." /></div>
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
-                            <h4>Shoreline</h4>
-                            <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                            <h4>Консультації</h4>
+                            <p class="text-black-50 mb-0">Люди потребують захист своїх комп'ютерів та підтримання їх у чистоті та оптимальній роботі.
+                                Ми підлаштовуємся під клієнтів, а не вони під нас!</p>
                         </div>
                     </div>
                 </div>
                 <!-- Project One Row-->
-                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                <div id="projects" class="row gx-0 mb-5 mb-lg-0 justify-content-center">
                     <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-01.jpg" alt="..." /></div>
                     <div class="col-lg-6">
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">Misty</h4>
-                                    <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                                    <h4 class="text-white">Послуги DevSec</h4>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">Діагностика - безкоштовно</li>
+                                        <li class="list-group-item">Видалення вірусу - 150 грн</li>
+                                        <li class="list-group-item">Видалення реклами в браузері - 50 грн</li>
+                                        <li class="list-group-item">Відновлення видалених даних - 200 грн</li>
+                                        <li class="list-group-item">Видалення невідомих програм - 100 грн</li>
+                                      </ul>
                                     <hr class="d-none d-lg-block mb-0 ms-0" />
                                 </div>
                             </div>
@@ -115,8 +135,12 @@
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white">Mountains</h4>
-                                    <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
+                                    <h4 class="text-white">Пакети DevSec</h4>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">Стандарт - діагностика, видалення вірусу, встановлення безкоштовного антивірусу</li>
+                                        <li class="list-group-item">Оптимальний - діагностика, видалення вірусу, встановлення ліцензійного антивірусу</li>
+                                        <li class="list-group-item">Розширений - діагностика, видалення вірусу, встановлення ліцензійного антивірусу, чистка системи від сміттєвих файлів, настройка і оптимізація ОС</li>
+                                      </ul>
                                     <hr class="d-none d-lg-block mb-0 me-0" />
                                 </div>
                             </div>
@@ -130,8 +154,8 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5">
                     <div class="col-md-10 col-lg-8 mx-auto text-center">
-                        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                        <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
+                        <i class="far fa-paper-plane fa-2x mb-2 text-black"></i>
+                        <h2 class="text-black mb-5"> Отримай знижки та промокоди на свій e-mail</h2>
                         <!-- * * * * * * * * * * * * * * *-->
                         <!-- * * SB Forms Contact Form * *-->
                         <!-- * * * * * * * * * * * * * * *-->
@@ -154,10 +178,6 @@
                             <div class="d-none" id="submitSuccessMessage">
                                 <div class="text-center mb-3 mt-2 text-white">
                                     <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
                             </div>
                             <!-- Submit error message-->
                             <!---->
@@ -170,26 +190,39 @@
             </div>
         </section>
         <!-- Contact-->
-        <section class="contact-section bg-black">
+        <section id="advice" class="contact-section bg-black">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5">
                     <div class="col-md-4 mb-3 mb-md-0">
                         <div class="card py-4 h-100">
                             <div class="card-body text-center">
-                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Address</h4>
+                                <i class="fas fa-bug text-primary mb-2"></i>
+                                <h4 class="text-uppercase text-white m-0">Помилки в системі Windows</h4>
                                 <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+                                <div class="small text-white-50">Якщо виникає така помилка, то це говорить про те, що програма або додаток не може працювати в даній ОС. На це є кілька причин, а саме конфлікт системи, пошкодження файлу, невиправлених. Найчастіше таке вікно спливає, коли файл пошкоджений. Особливо це стосується тих програм, які мають розширення .dll або .exe.
+                                    Найбільш часто дане вікно з помилкою з’являється 
+                                    в таких випадках: операційна система Віндовс в черговий раз оновилася, користувач встановив гру або ПО на РС, 
+                                    користувачем були встановити чи оновити набір драйверів. Помилка після оновлень Windows.
+                                    в даному випадку можна впоратися з помилкою самостійно і не відносити комп’ютер в сервісний центр. Варто розглянути найпопулярніші і ефективні способи для повернення свого ПК в робочий стан.
+        
+                                    Вирішення: Оновлення «Visual C ++», перевстановлення програми або драйверів, видалити оновлення
+        </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 mb-3 mb-md-0">
                         <div class="card py-4 h-100">
                             <div class="card-body text-center">
-                                <i class="fas fa-envelope text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Email</h4>
+                                <i class="fas fa-bomb text-primary mb-2"></i>
+                                <h4 class="text-uppercase text-white m-0">Синій екран</h4>
                                 <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
+                                <div class="small text-white-50">
+                                    Цю проблему називають «синім екраном смерті». Зазвичай свідчить про фатальну помилку в системі. На екрані зазвичай є код, який вказує на причину виникнення проблеми.
+                                    До того ж екран зупиняє всі процеси, що дозволяє врятувати файли від пошкоджень, а обладнання від поломки.
+                                    Причин виникнення цієї помилки багато — некоректно оброблені файли, пошкодження модулів оперативної пам’яті, поломки жорсткого диска, пошкодження драйверів, порушення системи файлів, різні несправності фізичного характеру та інші.
+                                    Часом вирішити проблему можна за допомогою простої перезавантаження.
+                                    У перших двох рядках слід шукати код, який вкаже на причину появи «екрану».
+                                    Також потрібно відключити автоматичну перезавантаження, оскільки іноді вона заважає з’ясувати причину несправності</div>
                             </div>
                         </div>
                     </div>
@@ -197,14 +230,61 @@
                         <div class="card py-4 h-100">
                             <div class="card-body text-center">
                                 <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <h4 class="text-uppercase text-white m-0">0x80070002</h4>
                                 <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50">+1 (555) 90fbgdfbdzfbdfbdfsbhsdfhbhsdfhbsdfghsdfghsdfghsdfhgdfshfdshfdshsfdhfdshsdfhsdfhsdfhsdfhsfdhsdfhsdfhsdfhsdfhfdshsdfhsdfhsdfhdsfhfdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2-8832</div>
+                                <div class="small text-white-50">У момент update 10 користувачі можуть зіткнутися з кодом помилки 0x80070002. Вона свідчить про те, що пошкоджена папка Windows Update або обраний неправильний часовий пояс.
+                                Для виправлення помилки коду 0x80070002 на Windows 10 розробники рекомендують скористатися такими рішеннями: перевірити налаштування дати і часу (у нижньому правому куті клікаєм на час і вибираємо «Зміна налаштувань дати і часу».
+                                Також помилку можна виправити, якщо видалити деякі файли.</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="social d-flex justify-content-center">
+            </div>
+        </section>
+        <section class="contact-section bg-black">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-bug text-primary mb-2"></i>
+                                <h4 class="text-uppercase text-white m-0">0x80073712</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-white-50">При оновленні Windows 10 можна зіткнутися з кодом помилки 0x80073712.
+                                    Також ймовірно буде повідомлення, що система не може отримати доступ до файлів оновлення, так як ті пошкоджені або відсутні.
+                                    З’являється така помилка у Windows update. Тому, якщо у вас в даному розділі вилетів код помилки 0x80073712 на Windows 10, то рішення буде наступним.
+                                    Спосіб №1. Відновлення сховища без інсталяційного диска
+                                    Помилка пов’язана з пошкодженням сховища системи. На Віндовс 10 її можна усунути без інсталяційного диску або з ним.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-bomb text-primary mb-2"></i>
+                                <h4 class="text-uppercase text-white m-0">0x8004005</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-white-50">Після випуску Windows 10, багато зіткнулися з деякими проблемами і помилками.
+                                    Розробники випустили спеціальне оновлення KB3081424, яке повинно було усунути більшість проблем при переході на 10 версію Віндовс.
+                                    Однак дане оновлення початок лагают саме, відправляючи систему на циклічну перезавантаження. Внаслідок цього при установці Windows 10 виникало код помилки 0х80004005.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase text-white m-0">0x800f081f</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-white-50">На новому Віндовсі існує така проблема, що ряд програм працює тільки в тому випадку, якщо встановлена програма NetFramework 3.5.
+                                    Однак і тут з’явилася складність — після завантаження цієї утиліти Windows 10 з’являється код помилки 0x800f081f.
+                                    Зазвичай цей код означає, що відсутні або пошкоджені файли бібліотеки NetFramework 3.5.
+                                    Зазвичай усуненням цієї проблеми є видалення та перевстановлення програми.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="social" class="social d-flex justify-content-center">
                     <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                     <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                     <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
@@ -212,15 +292,10 @@
             </div>
         </section>
         <!-- Footer-->
-        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Your Website 2021</div></footer>
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Designed &copy; DevSec 2021</div></footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
